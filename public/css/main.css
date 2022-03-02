@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap");
+/* background colors */
+/* accent */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*********** Utils Classes ****************/
+.btn {
+  padding: 1em 4em;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 5em;
+  background-color: white;
+}
+
+.btn--primary {
+  background-color: #339ecc;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #65e2d9;
+  color: white;
+  cursor: pointer;
+}
+
+/*********** Mobile first approach *************/
+header {
+  background-color: #1c2431;
+  display: flex;
+  justify-content: space-between;
+  padding: 3em 2em;
+}
+header img {
+  width: 6em;
+}
+header ul.header__nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+header li {
+  font-family: "Raleway";
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+}
+header li:hover {
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+
+main {
+  background-color: #181f2a;
+  padding: 1em 2em;
+}
+main .hero img {
+  width: 100%;
+}
+main .hero h1 {
+  margin-block: 1.5em 1em;
+  font-family: "Raleway";
+  font-weight: 700;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+main .hero p {
+  font-family: "Raleway";
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+main .hero button {
+  display: block;
+  margin-block: 3em;
+  margin-inline: auto;
+}
+main .feature {
+  margin-block: 10em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+main .feature__card {
+  padding: 1em 0;
+}
+main .feature__card__img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+main .feature__card h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+}
+main .feature__card p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+main .productive {
+  margin-bottom: 10em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+main .productive img {
+  width: 100%;
+}
+main .productive h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  color: white;
+  font-size: 1.25rem;
+}
+main .productive p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+}
+main .productive__link {
+  color: #65e2d9;
+  fill: #65e2d9;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+  position: relative;
+}
+main .productive__link a {
+  font-family: "Raleway";
+  font-weight: 400;
+  color: inherit;
+}
+main .productive__link svg {
+  width: 1em;
+  fill: inherit;
+}
+main .productive__link::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #65e2d9;
+  position: absolute;
+  bottom: -20%;
+}
+main .productive__link:hover::after {
+  background-color: white;
+}
+main .productive__link:hover {
+  color: white;
+  fill: white;
+  cursor: pointer;
+}
+main .feedback {
+  margin-block: 10em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5em;
+  position: relative;
+}
+main .feedback__quotes {
+  position: absolute;
+  top: -1.8em;
+  left: 0.5em;
+  width: 2.5em;
+}
+main .feedback__card {
+  background-color: #202a3c;
+  padding: 3em 2em 2em;
+  border-radius: 5px;
+}
+main .feedback__card__content {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 2em;
+}
+main .feedback__card__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+main .feedback__card__profile img {
+  border-radius: 50%;
+  width: 3em;
+}
+main .feedback__card__profile div {
+  display: flex;
+  flex-direction: column;
+}
+main .feedback__card__profile div h3 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+}
+main .feedback__card__profile div p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+}
+main .early-access {
+  margin-block: 10em 5em;
+  padding: 2em;
+  background-color: #1c2431;
+  border-radius: 10px;
+}
+main .early-access h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+}
+main .early-access p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+main .early-access input {
+  padding: 1em 2em;
+  margin-block: 2em 1.5em;
+  width: 100%;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 5em;
+  background-color: white;
+}
+main .early-access button {
+  width: 100%;
+  font-size: 0.8rem;
+  padding-block: 1.425em;
+}
+
+.footer {
+  background-color: #0b1523;
+  padding: 3em 2em;
+}
+.footer__logo {
+  margin-bottom: 2em;
+}
+.footer__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin-block: 1em;
+}
+.footer__address p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.footer__contact__mobile {
+  margin-block: 1em;
+}
+.footer__contact__mobile span {
+  display: inline-block;
+  margin-inline: 1em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+}
+.footer__contact__email {
+  margin-block: 1em;
+}
+.footer__contact__email span {
+  display: inline-block;
+  margin-inline: 1em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+}
+.footer__nav {
+  margin-block: 3em;
+}
+.footer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin-block: 3em;
+}
+.footer__nav li {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+  margin-block: 0.8em;
+}
+.footer__nav li:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+.footer__media {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+.footer__media svg {
+  fill: white;
+}
+.footer__media svg:hover {
+  cursor: pointer;
+  fill: #65e2d9;
+}
+
+/*# sourceMappingURL=main.css.map */

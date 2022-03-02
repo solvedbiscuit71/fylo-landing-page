@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+/* background colors */
+$intro-bg: hsl(217, 28%, 15%);
+$main-bg: hsl(218, 28%, 13%);
+$footer-bg: hsl(216, 53%, 9%);
+$feedback-bg: hsl(219, 30%, 18%);
+
+/* accent */
+$cyan: hsl(176, 68%, 64%);
+$blue: hsl(198, 60%, 50%);
+$light-red: hsl(0, 100%, 63%);
+
+*,*::before,*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*********** Utils Classes ****************/
+.btn {
+  padding: 1em 4em;
+
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 5em;
+  background-color: white;
+}
+
+.btn--primary {
+  background-color: $blue;
+  color: white;
+}
+
+.btn:hover {
+  background-color: $cyan;
+  color: white;
+
+  cursor: pointer;
+}
+
+/*********** Mobile first approach *************/
+header {
+  background-color: $intro-bg;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 3em 2em;
+
+  img {
+    width: 6em;
+  }
+
+  ul.header__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 2em;
+  }
+
+  li {
+    font-family: "Raleway";
+    font-weight: 400;
+
+    color: white;
+    font-size: 1rem;
+  }
+
+  li:hover {
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration-line: underline;
+  }
+}
+
+main {
+  background-color: $main-bg;
+  padding: 1em 2em;
+
+  .hero {
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      margin-block: 1.5em 1em;
+      font-family: "Raleway";
+      font-weight: 700;
+
+      color: white;
+      font-size: 1.5rem;
+
+      text-align: center;
+    }
+
+    p {
+      font-family: "Raleway";
+      font-weight: 400;
+
+      color: white;
+      font-size: 1rem;
+
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin-block: 3em;
+      margin-inline: auto;
+    }
+  }
+
+  .feature {
+    margin-block: 10em;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 2em;
+
+    &__card {
+      padding: 1em 0;
+
+      &__img {
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 2em;
+      }
+
+      h2 {
+        font-family: "Raleway";
+        font-weight: 700;
+
+        color: white;
+        font-size: 1.25rem;
+
+        text-align: center;
+      }
+
+      p {
+        font-family: "Open Sans";
+        font-weight: 400;
+
+        color: white;
+        font-size: 1rem;
+
+        text-align: center;
+      }
+    }
+  }
+
+  .productive {
+    margin-bottom: 10em;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 2em;
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: "Raleway";
+      font-weight: 700;
+
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-family: "Open Sans";
+      font-weight: 400;
+
+      color: white;
+      font-size: 1rem;
+    }
+
+    &__link {
+      color: $cyan;
+      fill: $cyan;
+
+      display: flex;
+      align-items: center;
+      gap: .5em;
+
+      width: fit-content;
+      position: relative;
+
+      a {
+        font-family: "Raleway";
+        font-weight: 400;
+
+        color: inherit;
+      }
+
+      svg {
+        width: 1em;
+        fill: inherit;
+      }
+    }
+
+    &__link::after {
+      content: "";
+
+      height: 2px;
+      width: 100%;
+
+      background-color: $cyan;
+
+      position: absolute;
+      bottom: -20%;
+    }
+
+    &__link:hover::after {
+      background-color: white;
+    }
+
+    &__link:hover {
+      color: white;
+      fill: white;
+
+      cursor: pointer;
+    }
+  }
+
+  .feedback {
+    margin-block: 10em;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 2.5em;
+    position: relative;
+
+    &__quotes {
+      position: absolute;
+
+      top: -1.8em;
+      left: 0.5em;
+
+      width: 2.5em;
+    }
+
+    &__card {
+      background-color: $feedback-bg;
+      padding: 3em 2em 2em;
+
+      border-radius: 5px;
+
+      &__content {
+        font-family: "Open Sans";
+        font-weight: 400;
+
+        font-size: 1rem;
+        color: white;
+        
+        margin-bottom: 2em;
+      }
+
+      &__profile {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        gap: 1em;
+
+        img {
+          border-radius: 50%;
+          width: 3em;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+
+          h3 {
+            font-family: "Raleway";
+            font-weight: 700;
+
+            font-size: 1rem;
+            color: white;
+            margin: 0;
+          }
+
+          p {
+            font-family: "Open Sans";
+            font-weight: 400;
+
+            font-size: 1rem;
+            color: white;
+            margin: 0;
+          }
+        }
+      }
+      
+    }  
+  }
+  
+  .early-access {
+    margin-block: 10em 5em;
+    padding: 2em;
+    background-color: $intro-bg;
+
+    border-radius: 10px;
+
+    h2 {
+      font-family: "Raleway";
+      font-weight: 700;
+
+      color: white;
+      font-size: 1.25rem;
+
+      text-align: center;
+    }
+
+    p {
+      font-family: "Open Sans";
+      font-weight: 400;
+
+      color: white;
+      font-size: 1rem;
+
+      text-align: center;
+    }
+
+    input {
+      padding: 1em 2em;
+      margin-block: 2em 1.5em;
+      width: 100%;
+
+      font-family: "Open Sans";
+      font-size: 1rem;
+      font-weight: 400;
+
+      border: none;
+      border-radius: 5em;
+      background-color: white;
+    }
+
+    button {
+      width: 100%;
+      font-size: 0.8rem;
+
+      padding-block: 1.425em;
+    }
+  }
+}
+
+.footer {
+  background-color: $footer-bg;
+  padding: 3em 2em;
+
+  &__logo {
+    margin-bottom: 2em;
+  }
+  
+  &__address {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+
+    margin-block: 1em;
+
+    p {
+      font-family: "Open Sans";
+      font-weight: 400;
+
+      color: white;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
+
+  &__contact {
+    &__mobile {
+      margin-block: 1em;
+
+      span {
+        display: inline-block;
+        margin-inline: 1em;
+
+        font-family: "Open Sans";
+        font-weight: 400;
+
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__email {
+      margin-block: 1em;
+
+      span {
+        display: inline-block;
+        margin-inline: 1em;
+
+        font-family: "Open Sans";
+        font-weight: 400;
+
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__nav {
+    margin-block: 3em;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-block: 3em;
+    }
+
+    li {
+      font-family: "Open Sans";
+      font-weight: 400;
+
+      color: white;
+      font-size: 1.2rem;
+      margin-block: .8em;
+    }
+
+    li:hover {
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 1em;
+
+    justify-content: center;
+
+    svg {
+      fill: white;
+    }
+
+    svg:hover {
+      cursor: pointer;
+      fill: $cyan;
+    }
+  }
+}
