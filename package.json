@@ -1,0 +1,15 @@
+{
+  "name": "fylo-dark-theme-landing-page",
+  "description": "This is a challenge from frontendmentor.io",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "sass": "sass --watch src/sass:public/css"
+  },
+  "author": "solvedbiscuit71",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "sass": "^1.49.9"
+  }
+}
