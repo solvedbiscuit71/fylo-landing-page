@@ -68,9 +68,28 @@ header li:hover {
   text-decoration-line: underline;
 }
 
+main::before {
+  content: "";
+  width: 100%;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1c2431;
+  background-image: url("../../images/bg-curvy-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+}
+
 main {
   background-color: #181f2a;
   padding: 1em 2em;
+  position: relative;
+}
+main .hero {
+  position: relative;
+  z-index: 1;
 }
 main .hero img {
   width: 100%;
@@ -232,10 +251,11 @@ main .feedback__card__profile div p {
   margin: 0;
 }
 main .early-access {
-  margin-block: 10em 5em;
   padding: 2em;
   background-color: #1c2431;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
 }
 main .early-access h2 {
   font-family: "Raleway";
@@ -266,6 +286,16 @@ main .early-access button {
   width: 100%;
   font-size: 0.8rem;
   padding-block: 1.425em;
+}
+
+main::after {
+  content: "";
+  width: 100%;
+  height: min(50vw, 16em);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #0b1523;
 }
 
 .footer {
