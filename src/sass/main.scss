@@ -108,13 +108,16 @@ main::before {
 
 main {
   background-color: $main-bg;
-  padding: 1em 2em;
+  padding: 4em 2em;
 
   position: relative;
 
   .hero {
     position: relative; 
     z-index: 1;
+
+    width: min(720px,100%);
+    margin-inline: auto;
 
     img {
       width: 100%;
@@ -157,6 +160,8 @@ main {
 
     &__card {
       padding: 1em 0;
+      width: min(100%, 370px);
+      margin-inline: auto;
 
       &__img {
         display: flex;
@@ -273,6 +278,7 @@ main {
 
     &__quotes {
       position: absolute;
+      z-index: 2;
 
       top: -1.8em;
       left: 0.5em;
@@ -281,6 +287,9 @@ main {
     }
 
     &__card {
+      position: relative;
+      z-index: 3;
+
       background-color: $feedback-bg;
       padding: 3em 2em 2em;
 
@@ -336,6 +345,9 @@ main {
   }
   
   .early-access {
+    width: min(875px,100%);
+    margin-inline: auto;
+
     padding: 2em;
     background-color: $intro-bg;
 
@@ -363,9 +375,15 @@ main {
       text-align: center;
     }
 
+    &__form {
+      display: grid;
+
+      gap: 1.5em;
+      margin-block: 2.5em 1em;
+    }
+
     input {
       padding: 1em 2em;
-      margin-block: 2em 1.5em;
       width: 100%;
 
       font-family: "Open Sans";
@@ -378,10 +396,9 @@ main {
     }
 
     button {
+      padding: 1em 2em;
       width: 100%;
-      font-size: 0.8rem;
-
-      padding-block: 1.425em;
+      font-size: 1rem;
     }
   }
 }
@@ -401,18 +418,25 @@ main::after {
 
 .footer {
   background-color: $footer-bg;
-  padding: 3em 2em;
+  padding: 5em 2em;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 1.5em;
 
   &__logo {
-    margin-bottom: 2em;
+    position: absolute;
+    top: 0;
+    left: 2em;
   }
   
   &__address {
     display: flex;
     align-items: flex-start;
     gap: 1em;
-
-    margin-block: 1em;
 
     p {
       font-family: "Open Sans";
@@ -426,8 +450,6 @@ main::after {
 
   &__contact {
     &__mobile {
-      margin-block: 1em;
-
       span {
         display: inline-block;
         margin-inline: 1em;
@@ -441,8 +463,8 @@ main::after {
     }
 
     &__email {
-      margin-block: 1em;
-
+      margin-top: 1.5em;
+      margin-bottom: 3em;
       span {
         display: inline-block;
         margin-inline: 1em;
@@ -457,12 +479,10 @@ main::after {
   }
 
   &__nav {
-    margin-block: 3em;
-
     ul {
       list-style: none;
       padding: 0;
-      margin-block: 3em;
+      margin-block: 0;
     }
 
     li {
@@ -484,6 +504,7 @@ main::after {
     display: flex;
     gap: 1em;
 
+    align-self: center;
     justify-content: center;
 
     svg {
@@ -493,6 +514,156 @@ main::after {
     svg:hover {
       cursor: pointer;
       fill: $cyan;
+    }
+  }
+}
+
+/*********** Desktop Design **************/
+
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 4em 8em;
+
+    img {
+      width: 8em;
+    }
+  }
+
+  main::before {
+    background-image: url("../../images/bg-curvy-desktop.svg");
+    height: 75em;
+  }
+
+  main {
+    padding: 0 8em 4em;
+
+    .hero {
+
+      div {
+        padding-inline: 5em;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.35rem;
+      }
+
+      button {
+        width: 45%;
+      }
+    }
+
+    .feature {
+      margin-block: 15em;
+
+      grid-template-columns: repeat(2,400px);
+      justify-content: center;
+
+      gap: 2em 10vw;
+
+      &__card {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1.05rem;
+        }
+      }
+    }
+
+    .productive {
+      margin-block: 15em;
+
+      display: grid;
+      grid-template-columns: 40vw 1fr;
+
+      align-items: center;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.45rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+
+    .feedback {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      justify-content: space-evenly;
+
+      &__card__content {
+        font-size: 1.25rem;
+      }
+
+      &__quotes {
+        width: 4em;
+
+        left: -.5em;
+        top: -2.5em;
+      }
+    }
+
+    .early-access {
+      padding: 2em 5em;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+
+      &__form {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+  }
+
+  main::after {
+    height: 11em;
+  }
+
+  .footer {
+    padding: 6em 8em;
+
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &__logo {
+      left: 8em;
+    }
+
+    &__address {
+      width: 28em;
+      margin: 0;
+    }
+
+    &__nav {
+      margin: 0;
+
+      ul {
+        margin: 0;
+      }
+
+      li {
+        margin-top: 0;
+      }
+    }
+
+    &__media {
+      align-self: flex-start;
     }
   }
 }

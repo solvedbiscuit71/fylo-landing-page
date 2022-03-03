@@ -84,12 +84,14 @@ main::before {
 
 main {
   background-color: #181f2a;
-  padding: 1em 2em;
+  padding: 4em 2em;
   position: relative;
 }
 main .hero {
   position: relative;
   z-index: 1;
+  width: min(720px, 100%);
+  margin-inline: auto;
 }
 main .hero img {
   width: 100%;
@@ -122,6 +124,8 @@ main .feature {
 }
 main .feature__card {
   padding: 1em 0;
+  width: min(100%, 370px);
+  margin-inline: auto;
 }
 main .feature__card__img {
   display: flex;
@@ -206,11 +210,14 @@ main .feedback {
 }
 main .feedback__quotes {
   position: absolute;
+  z-index: 2;
   top: -1.8em;
   left: 0.5em;
   width: 2.5em;
 }
 main .feedback__card {
+  position: relative;
+  z-index: 3;
   background-color: #202a3c;
   padding: 3em 2em 2em;
   border-radius: 5px;
@@ -251,6 +258,8 @@ main .feedback__card__profile div p {
   margin: 0;
 }
 main .early-access {
+  width: min(875px, 100%);
+  margin-inline: auto;
   padding: 2em;
   background-color: #1c2431;
   border-radius: 10px;
@@ -271,9 +280,13 @@ main .early-access p {
   font-size: 1rem;
   text-align: center;
 }
+main .early-access__form {
+  display: grid;
+  gap: 1.5em;
+  margin-block: 2.5em 1em;
+}
 main .early-access input {
   padding: 1em 2em;
-  margin-block: 2em 1.5em;
   width: 100%;
   font-family: "Open Sans";
   font-size: 1rem;
@@ -283,9 +296,9 @@ main .early-access input {
   background-color: white;
 }
 main .early-access button {
+  padding: 1em 2em;
   width: 100%;
-  font-size: 0.8rem;
-  padding-block: 1.425em;
+  font-size: 1rem;
 }
 
 main::after {
@@ -300,16 +313,22 @@ main::after {
 
 .footer {
   background-color: #0b1523;
-  padding: 3em 2em;
+  padding: 5em 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
 }
 .footer__logo {
-  margin-bottom: 2em;
+  position: absolute;
+  top: 0;
+  left: 2em;
 }
 .footer__address {
   display: flex;
   align-items: flex-start;
   gap: 1em;
-  margin-block: 1em;
 }
 .footer__address p {
   font-family: "Open Sans";
@@ -317,9 +336,6 @@ main::after {
   color: white;
   font-size: 1.2rem;
   margin: 0;
-}
-.footer__contact__mobile {
-  margin-block: 1em;
 }
 .footer__contact__mobile span {
   display: inline-block;
@@ -330,7 +346,8 @@ main::after {
   font-size: 1.2rem;
 }
 .footer__contact__email {
-  margin-block: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
 }
 .footer__contact__email span {
   display: inline-block;
@@ -340,13 +357,10 @@ main::after {
   color: white;
   font-size: 1.2rem;
 }
-.footer__nav {
-  margin-block: 3em;
-}
 .footer__nav ul {
   list-style: none;
   padding: 0;
-  margin-block: 3em;
+  margin-block: 0;
 }
 .footer__nav li {
   font-family: "Open Sans";
@@ -362,6 +376,7 @@ main::after {
 .footer__media {
   display: flex;
   gap: 1em;
+  align-self: center;
   justify-content: center;
 }
 .footer__media svg {
@@ -370,6 +385,119 @@ main::after {
 .footer__media svg:hover {
   cursor: pointer;
   fill: #65e2d9;
+}
+
+/*********** Desktop Design **************/
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 4em 8em;
+  }
+  header img {
+    width: 8em;
+  }
+
+  main::before {
+    background-image: url("../../images/bg-curvy-desktop.svg");
+    height: 75em;
+  }
+
+  main {
+    padding: 0 8em 4em;
+  }
+  main .hero div {
+    padding-inline: 5em;
+  }
+  main .hero h1 {
+    font-size: 2rem;
+  }
+  main .hero p {
+    font-size: 1.35rem;
+  }
+  main .hero button {
+    width: 45%;
+  }
+  main .feature {
+    margin-block: 15em;
+    grid-template-columns: repeat(2, 400px);
+    justify-content: center;
+    gap: 2em 10vw;
+  }
+  main .feature__card h2 {
+    font-size: 1.5rem;
+  }
+  main .feature__card p {
+    font-size: 1.05rem;
+  }
+  main .productive {
+    margin-block: 15em;
+    display: grid;
+    grid-template-columns: 40vw 1fr;
+    align-items: center;
+  }
+  main .productive h2 {
+    font-size: 2rem;
+  }
+  main .productive p {
+    font-size: 1.45rem;
+  }
+  main .productive a {
+    font-size: 1.2rem;
+  }
+  main .feedback {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+  }
+  main .feedback__card__content {
+    font-size: 1.25rem;
+  }
+  main .feedback__quotes {
+    width: 4em;
+    left: -0.5em;
+    top: -2.5em;
+  }
+  main .early-access {
+    padding: 2em 5em;
+  }
+  main .early-access h2 {
+    font-size: 2rem;
+  }
+  main .early-access p {
+    font-size: 1.15rem;
+  }
+  main .early-access__form {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  main::after {
+    height: 11em;
+  }
+
+  .footer {
+    padding: 6em 8em;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .footer__logo {
+    left: 8em;
+  }
+  .footer__address {
+    width: 28em;
+    margin: 0;
+  }
+  .footer__nav {
+    margin: 0;
+  }
+  .footer__nav ul {
+    margin: 0;
+  }
+  .footer__nav li {
+    margin-top: 0;
+  }
+  .footer__media {
+    align-self: flex-start;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
