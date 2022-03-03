@@ -284,8 +284,9 @@ main .early-access__form {
   display: grid;
   gap: 1.5em;
   margin-block: 2.5em 1em;
+  position: relative;
 }
-main .early-access input {
+main .early-access__form input {
   padding: 1em 2em;
   width: 100%;
   font-family: "Open Sans";
@@ -295,10 +296,19 @@ main .early-access input {
   border-radius: 5em;
   background-color: white;
 }
-main .early-access button {
+main .early-access__form button {
   padding: 1em 2em;
   width: 100%;
   font-size: 1rem;
+}
+main .early-access__error {
+  color: #ff4242;
+  display: none;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  position: absolute;
+  bottom: -1.5em;
+  left: 2em;
 }
 
 main::after {
